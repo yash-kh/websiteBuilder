@@ -1,0 +1,12 @@
+.switch {
+  cursor: pointer;
+}
+
+.switch:hover {
+  color: rgb(81, 81, 255);
+}
+
+.loginPage {
+  background: linear-gradient(to right bottom, #7ed56f, #28b485);
+  margin-top: 5rem;
+}

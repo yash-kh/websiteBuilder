@@ -1,0 +1,73 @@
+<div class="center">
+  <div class="logout-box">
+    <button type="button" class="btn btn-danger" (click)="logOut()">
+      Log Out
+    </button>
+  </div>
+  <div class="div">
+    <form [formGroup]="siteForm">
+      <div class="input-group pb-2">
+        <span class="input-group-text tm-primary-bg">Name</span>
+        <input
+          required
+          type="text"
+          formControlName="name"
+          class="form-control"
+          placeholder="Name"
+        />
+      </div>
+      <div class="input-group pb-2">
+        <span class="input-group-text tm-primary-bg">Age</span>
+        <input
+          required
+          type="number"
+          formControlName="age"
+          class="form-control"
+          placeholder="Age"
+        />
+      </div>
+      <div class="input-group mb-2">
+        <label class="input-group-text">Gender</label>
+        <select required formControlName="gender" class="form-select">
+          <option value="Male">male</option>
+          <option value="Female">female</option>
+        </select>
+      </div>
+      <div class="input-group pb-2">
+        <span class="input-group-text tm-primary-bg">Avatar</span>
+        <input
+          required
+          style="padding: 4px"
+          type="file"
+          accept="image/png, image/jpg, image/jpeg"
+          class="form-control"
+          placeholder="Avatar"
+          (change)="onImageSelect($event)"
+        />
+      </div>
+      <div class="input-group pb-3">
+        <span class="input-group-text tm-primary-bg">About Yourself</span>
+        <textarea
+          required
+          type="text"
+          formControlName="about"
+          class="form-control"
+          placeholder="About"
+        ></textarea>
+      </div>
+      <button
+        [disabled]="siteForm.invalid"
+        class="btn btn-primary"
+        (click)="generateSite()"
+      >
+        Generate Site
+      </button>
+      <div *ngIf="!(website.length === 0)" class="alert alert-success mt-2">
+        <a [href]="'http://' + website" target="_blank">{{ website }}</a>
+      </div>
+      <div *ngIf="!(error.length === 0)" class="alert alert-danger mt-2">
+        {{ error }}
+      </div>
+    </form>
+  </div>
+</div>

@@ -1,0 +1,10 @@
+.logo {
+  padding: 1rem 2rem;
+  background-color: #fcde67;
+  display: inline-block;
+  clip-path: polygon(0 0, 100% 0, 100% 75%, 0% 100%);
+}
+
+.logo .h2 {
+  font-weight: 200;
+}
